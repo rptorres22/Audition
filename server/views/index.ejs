@@ -7,5 +7,24 @@
 </head>
 <body>
 	<h1><%=title %></h1>
+
+
+	<!-- Render AngularJS views  -->
+	<section ng-view></section>
+
+	<!-- Load local libraries -->
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+	<!-- Load the test module -->
+	<script type="text/javascript" src="/test/test.client.module.js"></script>
+	<script type="text/javascript" src="/test/controllers/test.client.controller.js"></script>
+	<script type="text/javascript" src="/test/services/test.client.service.js"></script>
+	<script type="text/javascript" src="/test/config/test.client.routes.js"></script>
+
+	<!-- Bootstrap AngularJS Application -->
+	<script type="text/javascript" src="/application.js"></script>
+
 </body>
 </html>

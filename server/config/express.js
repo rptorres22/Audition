@@ -5,9 +5,10 @@
 */
 
 // Load the module dependencies
-var config 		= require('./config'),
-	express 	= require('express'),
-	bodyParser 	= require('body-parser');
+var config 			= require('./config'),
+	express 		= require('express'),
+	bodyParser 		= require('body-parser');
+	//methodOverride 	= require('method-override');
 
 
 
@@ -19,11 +20,12 @@ module.exports = function () {
 
 
 
-	// Use the 'body-parser' middleware functions
+	// Use the 'body-parser' and 'method-override' middleware functions
 	app.use(bodyParser.urlencoded({
 		extended: true
 	}));
 	app.use(bodyParser.json());
+	//app.use(methodOverride());
 
 
 
@@ -35,9 +37,10 @@ module.exports = function () {
 
 	// Load the routing files
 	require('../routes/index.server.routes.js')(app);
+	require('../routes/test.server.routes.js')(app);
 
 	// Configure static file serving
-	app.use(express.static('../../client'));
+	app.use(express.static('./client'));
 
 
 	return app;
