@@ -1,41 +1,39 @@
+// server.js
 
+/*
+	This is the main file that you will run
+*/
 
-// setup ================================================================
-var express 	= require('express');
-var app 		= express();
-
-var bodyParser 	= require('body-parser');	// parse res/req objects for use
-var mongoose	= require('mongoose');		// mongoose for mongodb
-
-var port 		= process.env.PORT || 8080;	//set the port
-
-var routeIndex 	= require('./server/routes/index');    // route file for index
-var routeApi	= require('./server/routes/api');		// route file for api
-
-
-// configuration =========================================================
-mongoose.connect('mongodb://localhost:27017/audition');
-
-app.use(bodyParser.json());
+// Set the 'NODE_ENV' variable
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 
 
 
-// routes ================================================================
-//app.get('*', function(req, res) {
-//	res.sendFile(__dirname + '/client/views/index.html');
-//});
-
-app.use('/', routeIndex);
-app.use('/api', routeApi);
+// Load the module dependencies
+var mongoose 	= require('./server/config/mongoose'), 
+	express		= require('./server/config/express');
 
 
 
+// Create a new Mongoose connection instance
+var db = mongoose();
 
-// listen on specified port defined above
-app.listen(port, function() {
-	console.log("listening on port " + port + " ..." );
-});
+// Create a new Express application instance
+var app = express();
+
+
+
+
+// Use the Express application instance to listen to the '3000' port
+app.listen(3000);
+
+// Log the server status to the console
+console.log('Server running at http://localhost:3000');
+
+// Use the module.exports property to expose our Express application instance for external usage
+module.exports = app;
+
 
 
 
