@@ -44,3 +44,4 @@ Temporary Items
 
 # Ignore files from the app
 /node_modules
+/client/lib

@@ -1,0 +1,17 @@
+{
+  "name": "Audition",
+  "version": "0.0.0",
+  "homepage": "https://github.com/rptorres22/Audition",
+  "authors": [
+    "rptorres22 <rtorres22@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib",
+    "test",
+    "tests"
+  ]
+}
