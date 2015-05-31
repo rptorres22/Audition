@@ -9,7 +9,7 @@ angular.module('test').config(['$routeProvider',
 			.when('/', {
 				templateUrl: 'test/views/list-test.client.view.html'
 			})
-			.when('/create', {
+			.when('/test/create', {
 				templateUrl: 'test/views/create-test.client.view.html'
 			})
 			.otherwise({

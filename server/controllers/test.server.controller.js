@@ -33,6 +33,8 @@ exports.create = function (req, res) {
 	// Create a new test object
 	var test = new TestModel(req.body);
 
+	//console.log(req.body);
+
 	// Try saving the article
 	test.save(function (err) {
 

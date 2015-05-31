@@ -1,0 +1,35 @@
+
+<!--  
+	To make the template valid HTML, we're using data-* attributes
+
+	AngularJS created alternate names for their directives that 
+	include the "data-" in front of them os that HTML validator programs will "like" them
+
+-->
+
+<!-- The create test view -->
+<section data-ng-controller="TestController">
+
+	<h1>New Test Message</h1>
+	
+	<!-- The new article form -->
+	<form data-ng-submit="create()" novalidate>
+		<div>
+			<label for="usermessage">Messsage</label>
+			<div>
+				<input type="text" data-ng-model="usermessage" id="usermessage" placeholder="Type a message" required>
+			</div>
+		</div>
+
+
+		<div>
+			<input type="submit">
+		</div>
+
+		<!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+	
+</section>
