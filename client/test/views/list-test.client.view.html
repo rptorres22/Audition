@@ -7,12 +7,14 @@
 		<li data-ng-repeat="test in tests">
 			<p data-ng-bind="test.message"></p>
 			<small>Created: </small><small data-ng-bind="test.created | date:'medium'"></small>
+			<a href="/#!/test/{{test._id}}/edit">Edit</a>
+			<a href="" data-ng-click="delete(test)">Delete</a>
 		</li>	
 	</ul>
 
 	<!-- If there are no tests in the list, suggest the user's create a new test -->
 	<div data-ng-hide="!tests || tests.length">
-		No tests yet, whly don't you <a href="/#!/test/create"> create one</a>?
+		No tests yet, why don't you <a href="/#!/test/create"> create one</a>?
 	</div>
 	
 	<!-- Extra code - i added this to navigate easier-->

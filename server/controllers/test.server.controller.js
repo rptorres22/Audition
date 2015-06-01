@@ -75,3 +75,76 @@ exports.list = function (req, res) {
 			});
 
 };
+
+
+// Create a new controller middleware that retrieves a single existing test
+exports.testByID = function (req, res, next, id) {
+	// Use the model 'findById' method to find a single test
+	TestModel.findById(id)
+		.exec(function (err, test) {
+			if (err)
+				return next(err);
+			if (!test)
+				return next(new Error('Failed to load test ' + id));
+
+			req.test = test;
+
+			// Call the next middleware
+			next();
+		});
+};
+
+
+
+// req.test should already be populated by testByID
+// when a user hits a route that contains an test ID
+exports.read = function (req, res) {
+	//console.log(req.test);
+	res.json(req.test);
+};
+
+
+// to update a test
+// this assumes that you already obtained the test object
+// in the testByID() middleware.
+exports.update = function (req, res) {
+	console.log(test);
+	// Get the test from the 'request' object
+	var test = req.test;
+
+	// Update the test fields
+	test.message = req.body.message;
+
+	// try saving the updated test
+	test.save(function (err) {
+		if (err) {
+			return res.status(400).send({
+				message: getErrorMessage(err)
+			});
+		} else {
+			res.json(test);
+		}
+	});
+};
+
+
+// to delete a test
+// this also assumes that you already obtained the test object
+// in the testByID() middleware.  Just need to invoke the mongoose
+// remove() method.
+exports.delete = function (req, res) {
+	// Get the article from the 'request' object
+	var test = req.test;
+
+	// Use the model 'remove' method to delete the test
+	test.remove(function (err) {
+		if (err) {
+			return res.status(400).send({
+				message: getErrorMessage(err)
+			});
+		} else {
+			res.json(test);
+		}
+	});
+};
+

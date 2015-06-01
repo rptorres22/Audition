@@ -12,9 +12,12 @@ angular.module('test').config(['$routeProvider',
 			.when('/test/create', {
 				templateUrl: 'test/views/create-test.client.view.html'
 			})
-			.otherwise({
-				redirectTo: '/'
+			.when('/test/:testId/edit', {
+				templateUrl: 'test/views/edit-test.client.view.html'
 			});
+			//.otherwise({
+			//	redirectTo: '/'
+			//});
 
 	}
 
