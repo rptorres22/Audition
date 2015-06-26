@@ -1,7 +1,10 @@
 /**
  * Created by eawilson on 6/5/2015.
  */
-var teamMembers = new Schema({
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var teamMembersSchema = new Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId, ref: 'User'
     },
@@ -16,3 +19,5 @@ var teamMembers = new Schema({
         default: Date.now
     }
 });
+
+mongoose.model('TeamMembers', teamMembersSchema);

@@ -1,7 +1,9 @@
 /**
  * Created by eawilson on 6/26/2015.
  */
-var files = new Schema({
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var filesSchema = new Schema({
     reviewId: {
         type: mongoose.Schema.Types.ObjectId, ref: 'Review'
     },
@@ -22,3 +24,5 @@ var files = new Schema({
         type: Boolean
     }
 });
+
+mongoose.model('Files', filesSchema);

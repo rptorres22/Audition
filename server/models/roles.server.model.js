@@ -1,7 +1,9 @@
 /**
  * Created by eawilson on 6/5/2015.
  */
-var roles = new Schema({
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var roleSchema = new Schema({
     name: {
         type: String
     },
@@ -11,3 +13,4 @@ var roles = new Schema({
 });
 
 
+mongoose.model('Roles', roleSchema);

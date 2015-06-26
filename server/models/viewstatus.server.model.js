@@ -1,7 +1,10 @@
 /**
  * Created by eawilson on 6/26/2015.
  */
-var viewStatus = new Schema({
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var viewstatusSchema = new Schema({
     fileId: {
         type: mongoose.Schema.Types.ObjectId, ref: 'Files'
     },
@@ -13,3 +16,5 @@ var viewStatus = new Schema({
         default: 'Not Viewed'
     }
 });
+
+mongoose.model('ViewStatus', viewstatusSchema);

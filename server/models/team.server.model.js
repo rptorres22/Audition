@@ -1,7 +1,8 @@
 /**
  * Created by eawilson on 6/5/2015.
  */
-var team = new Schema({
+var mongoose = require('mongoose');
+var teamSchema = new Schema({
     teamName: {
         type: String
     },
@@ -13,3 +14,5 @@ var team = new Schema({
         type: mongoose.Schema.Types.ObjectId, ref: 'User'
     }
 });
+
+mongoose.model('Team', teamSchema);

@@ -1,7 +1,10 @@
 /**
  * Created by eawilson on 6/5/2015.
  */
-var users = new Schema({
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var userSchema = new Schema({
     name: {
         type: String
     },
@@ -12,3 +15,5 @@ var users = new Schema({
         type: Date, default: Date.now
     }
 });
+
+mongoose.model('Users', userSchema);
