@@ -4,6 +4,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var requestTypeSchema = new Schema({
-//TODO
+    name: {
+        type: String
+    },
+    text: {
+        type: String
+    }
 });
+
 mongoose.model('RequestType', requestTypeSchema);

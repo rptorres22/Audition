@@ -4,7 +4,21 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var requestSchema = new Schema({
-//TODO
+    typeId: {
+        type: Schema.Types.ObjectId, ref: 'RequestTypes'
+    },
+    userId: {
+        type: Schema.Type
+    },
+    requester: {
+        type: Schema.Types.ObjectId, ref: 'Users'
+    },
+    text: {
+        type: String
+    },
+    date: {
+        type: Date.now
+    }
 });
 
 mongoose.model('Request', requestSchema);

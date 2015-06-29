@@ -4,7 +4,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var commentSchema = new Schema({
-//TODO
+    fileId: {
+        type: Schema.Type.ObjectId, ref: "Files"
+    },
+    lineNumber: {type: Number}
 });
 
 mongoose.model('Comment', commentSchema);
