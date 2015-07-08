@@ -8,16 +8,16 @@ var requestSchema = new Schema({
         type: Schema.Types.ObjectId, ref: 'RequestTypes'
     },
     userId: {
-        type: Schema.Type
+        type: Schema.Types.ObjectId
     },
     requester: {
-        type: Schema.Types.ObjectId, ref: 'Users'
+        type: Schema.Types.ObjectId, ref: 'User'
     },
     text: {
         type: String
     },
     date: {
-        type: Date.now
+        type: Date
     }
 });
 
