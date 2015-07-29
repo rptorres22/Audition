@@ -6,7 +6,8 @@ exports.render = function (req, res) {
 	//res.send('hello index controller works');
 
 	res.render('index', {
-		title: "Welcome to Audition"
+		title: "Welcome to Audition",
+		userFirstName: req.user ? req.user.firstName : ''
 	});
 
 };

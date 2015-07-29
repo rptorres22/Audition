@@ -12,8 +12,12 @@ var userSchema = new Schema({
         required: 'Username is required',
         trim: true
     },
-    accessType: {
-        type: String
+    normalizedUsername: {
+        type: String,
+        unique: true,
+        trim: true,
+        lowercase: true,
+        select: false
     },
     firstName: {
         type: String,
@@ -26,7 +30,10 @@ var userSchema = new Schema({
         required: 'Last name is required',
     },
     email: {
-        type: String, match: [/.+\@.+\..+/, "Please fill a valid e-mail address"]
+        type: String, match: [/.+\@.+\..+/, "Please fill a valid e-mail address"],
+        required: 'An e-mail address is required',
+        unique: true,
+        trim: true
     },
     password: {
         type: String,
@@ -35,20 +42,27 @@ var userSchema = new Schema({
             function (password) {
                 return password && password.length > 6;
             }, 'Password should be longer'
-        ]
+        ],
     },
     salt: {
-        type: String
+        type: String,
     },
     provider: {
         type: String,
-        required: 'Provider is required'
+        required: 'Provider is required',
     },
-    providerId: String,
+    providerId: {
+        type: String,
+    },
     providerData: {},
     created: {
         type: Date,
         default: Date.now
+    },
+    accessType: {
+        type: String,
+        default: 'level1',
+        select: false
     }
 });
 
@@ -66,6 +80,9 @@ userSchema.pre('save', function (next) {
             Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
         this.password = this.hashPassword(this.password);
     }
+    if(this.username){
+        this.normalizedUsername = this.username;
+    }
     next();
 });
 
@@ -77,6 +94,7 @@ userSchema.methods.hashPassword = function (password) {
 userSchema.methods.authenticate = function (password) {
     return this.password === this.hashPassword(password);
 };
+
 
 userSchema.statics.findUniqueUsername = function (username, suffix, callback) {
     var _this = this;

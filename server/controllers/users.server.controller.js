@@ -14,21 +14,14 @@ var getErrorMessage = function (err) {
 };
 
 exports.render = function (req, res) {
-    // Use the 'response' object to render the 'index' view
-    //res.send('hello index controller works');
-
     res.render('/users', {
         title: "Users"
     });
-
 };
 
 exports.createUser = function (req, res) {
-
     var user = new UserModel(req.body);
-
     user.save(function (err) {
-
         if (err) {
             // If an error occurs send the error message
             return res.status(400)
@@ -36,11 +29,27 @@ exports.createUser = function (req, res) {
                     message: getErrorMessage(err)
                 });
         } else {
-            // Send a JSON representation of the test
             res.json(test);
         }
     });
 };
+
+exports.listAll = function (req, res) { //TODO make right
+    UserModel.find().sort('-created')
+        .exec(function (err, data) {
+            if (err) {
+                // If an error occurs send the error message
+                return res.status(400)
+                    .send({
+                        message: getErrorMessage(err)
+                    });
+            } else {
+                // Send a JSON representation of the articles
+                res.json(data);
+            }
+        });
+};
+
 
 exports.getUserByID = function (req, res, next, id) {
     UserModel.findById(id).exec(function (err, user) {
@@ -55,9 +64,41 @@ exports.getUserByID = function (req, res, next, id) {
     })
 };
 
+exports.getUserByUsername = function (req, res, next, un) {
+    UserModel.findOne({'normalizedUsername': un.toLowerCase()}).select({'_id':0}).exec(function (err, user) {
+        if (err)
+            return next(err);
+        if (!user)
+            return next(new Error('Failed to get User ' + un));
+
+        req.user = user;
+
+        next();
+    })
+};
+
+exports.read = function (req, res) {
+    res.json(req.user);
+};
+
+
+//Page Render Methods
+exports.renderUserProfile = function (req, res) {
+    if (req.user) {
+        res.render('users/profile', {
+            title: req.user.firstName + '\'s Profile',
+            messages: req.flash('error') || req.flash('info'),
+            user: req.user
+        });
+    } else {
+        return res.redirect('/');
+    }
+
+};
+
 exports.renderLogin = function (req, res, next) {
     if (!req.user) {
-        res.render('signin', {
+        res.render('users/login', {
             title: 'Audition Sign In',
             messages: req.flash('error') || req.flash('info')
         });
@@ -84,10 +125,9 @@ exports.signup = function (req, res, next) {
         user.provider = 'local';
         user.save(function (err) {
             if (err) {
-                console.log(err);
                 var message = getErrorMessage(err);
                 req.flash('error', message);
-                return res.redirect('users/signup');
+                return res.redirect('/users/signup');
             }
             req.login(user, function (err) {
                 if (err) return next(err);
@@ -99,28 +139,8 @@ exports.signup = function (req, res, next) {
     }
 };
 
-exports.list = function (req, res) {
-
-    UserModel.find().sort('-created')
-        .exec(function (err, tests) {
-            if (err) {
-                // If an error occurs send the error message
-                return res.status(400)
-                    .send({
-                        message: getErrorMessage(err)
-                    });
-            } else {
-                // Send a JSON representation of the articles
-                res.json(tests);
-            }
-
-        });
-};
-exports.signout = function (req, res) {
+exports.logout = function (req, res) {
     req.logout();
     res.redirect('/');
 };
 
-exports.read = function (req, res) {
-    res.json(req.user);
-};

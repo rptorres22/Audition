@@ -8,6 +8,21 @@
 <body>
 <h1><%= title %></h1>
 
+<% for(var i in messages) { %>
+<div class="flash"><%= messages[i] %></div>
+<% } %>
+<form action="/users/login" method="post">
+<div class="list-group">
+    <div class="list-group-item">
+        <input placeholder="Username" name="username">
+    </div>
+    <div class="list-group-item">
+        <input placeholder="Password" name="password" type="password">
+    </div>
+    <button type="submit">Log In</button>
+</div>
+    </form>
+
 
 </body>
 </html>

@@ -8,7 +8,7 @@ module.exports = function (app) {
 
     // Mount the 'index' controller's 'render' method
     app.get('/', indexController.render);
-    app.get('users', userController.render);
+    app.get('/users', userController.render);
 
     //User Routes
     app.route('/users/signup')
@@ -19,15 +19,18 @@ module.exports = function (app) {
         .get(userController.renderLogin)
         .post(passport.authenticate('local', {
             successRedirect: '/',
-            failureRedirect: 'users/signin',
-            failureFlash: false
+            failureRedirect: 'login',
+            failureFlash: true
         }));
 
-    app.route('/api/users/list')
-        .get(userController.list)
+    app.route('/logout').get(userController.logout);
 
-    app.route('/api/users/:userId')
-        .get(userController.list);
+    app.route('/api/users/list')
+        .get(userController.listAll);
+
+    app.route('/users/:username')
+        .get(userController.renderUserProfile);
 
     app.param('userId', userController.getUserByID);
+    app.param('username', userController.getUserByUsername);
 };

@@ -9,6 +9,10 @@
 <body>
 <h1><%= title %></h1>
 
+<% for(var i in messages) { %>
+<div class="flash"><%= messages[i] %></div>
+<% } %>
+
 <form action="/users/signup" method="post">
     <div class="list-group">
         <div class="list-group-item">
@@ -27,6 +31,6 @@
         <button type="submit">Sign Up</button>
     </div>
 </form>
-s
+
 </body>
 </html>
