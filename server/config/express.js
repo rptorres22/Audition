@@ -7,7 +7,10 @@
 // Load the module dependencies
 var config 			= require('./config'),
 	express 		= require('express'),
-	bodyParser 		= require('body-parser');
+	bodyParser = require('body-parser'),
+	session = require('express-session')
+passport = require('passport'),
+	flash = require('connect-flash');
 	//methodOverride 	= require('method-override');
 
 
@@ -27,13 +30,20 @@ module.exports = function () {
 	app.use(bodyParser.json());
 	//app.use(methodOverride());
 
-
+	app.use(session({
+		saveUninitialized: true,
+		resave: true,
+		secret: config.sessionSecret
+	}));
 
 
 	// Set the application view engine and 'views' folder
 	app.set('views', './server/views');
 	app.set('view engine', 'ejs');
 
+	app.use(flash());
+	app.use(passport.initialize());
+	app.use(passport.session());
 
 	// Load the routing files
 	require('../routes/index.server.routes.js')(app);

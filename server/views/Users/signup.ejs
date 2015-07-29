@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+<head>
+
+    <!-- Use the 'title' property to render a page title  -->
+    <title><%= title %></title>
+    <link href="/css/users.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1><%= title %></h1>
+
+<form action="/users/signup" method="post">
+    <div class="list-group">
+        <div class="list-group-item">
+            <input placeholder="First Name" name="firstName">
+            <input placeholder="Last Name" name="lastName">
+        </div>
+        <div class="list-group-item">
+            <input placeholder="Username" name="username">
+        </div>
+        <div class="list-group-item">
+            <input placeholder="E-mail" name="email">
+        </div>
+        <div class="list-group-item">
+            <input placeholder="Password" name="password" type="password">
+        </div>
+        <button type="submit">Sign Up</button>
+    </div>
+    d
+</form>
+
+</body>
+</html>

@@ -17,8 +17,8 @@ exports.render = function (req, res) {
     // Use the 'response' object to render the 'index' view
     //res.send('hello index controller works');
 
-    res.render('users', {
-        title: "Welcome to Audition"
+    res.render('/users', {
+        title: "Users"
     });
 
 };
@@ -55,7 +55,7 @@ exports.getUserByID = function (req, res, next, id) {
     })
 };
 
-exports.renderSignin = function (req, res, next) {
+exports.renderLogin = function (req, res, next) {
     if (!req.user) {
         res.render('signin', {
             title: 'Audition Sign In',
@@ -68,7 +68,7 @@ exports.renderSignin = function (req, res, next) {
 
 exports.renderSignup = function (req, res, next) {
     if (!req.user) {
-        res.render('signup', {
+        res.render('users/signup', {
             title: 'Sign up for Audition',
             messages: req.flash('error')
         });
@@ -84,9 +84,10 @@ exports.signup = function (req, res, next) {
         user.provider = 'local';
         user.save(function (err) {
             if (err) {
+                console.log(err);
                 var message = getErrorMessage(err);
                 req.flash('error', message);
-                return res.redirect('/signup');
+                return res.redirect('users/signup');
             }
             req.login(user, function (err) {
                 if (err) return next(err);
@@ -114,7 +115,7 @@ exports.list = function (req, res) {
             }
 
         });
-}
+};
 exports.signout = function (req, res) {
     req.logout();
     res.redirect('/');

@@ -12,6 +12,16 @@ module.exports = function () {
 
 	// Load the application models
 	require('../models/test.server.model');
+	require('../models/users.server.model');
+	require('../models/comments.server.model');
+	require('../models/files.server.model');
+	require('../models/request.server.model');
+	require('../models/requesttype.server.model');
+	require('../models/reviews.server.model');
+	require('../models/roles.server.model');
+	require('../models/team.server.model');
+	require('../models/teammembers.server.model');
+	require('../models/viewstatus.server.model');
 
 	// Return the Mongoose connection instance
 	return db;

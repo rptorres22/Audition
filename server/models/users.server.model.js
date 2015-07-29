@@ -2,6 +2,7 @@
  * Created by eawilson on 6/5/2015.
  */
 var mongoose = require('mongoose'),
+    crypto = require('crypto'),
     Schema = mongoose.Schema;
 
 var userSchema = new Schema({
@@ -14,16 +15,22 @@ var userSchema = new Schema({
     accessType: {
         type: String
     },
-    createdDate: {
-        type: Date, default: Date.now
+    firstName: {
+        type: String,
+        required: 'First name is required',
+        trim: true
     },
-    firstName: String,
-    lastName: String,
+    lastName: {
+        type: String,
+        trim: true,
+        required: 'Last name is required',
+    },
     email: {
         type: String, match: [/.+\@.+\..+/, "Please fill a valid e-mail address"]
     },
     password: {
         type: String,
+        required: 'Password is required',
         validate: [
             function (password) {
                 return password && password.length > 6;
