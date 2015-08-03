@@ -16,4 +16,10 @@ var teamSchema = new Schema({
     }
 });
 
+teamSchema.pre('save', function (next) {
+    if(this.teamName){
+    }
+    next();
+});
+
 mongoose.model('Team', teamSchema);

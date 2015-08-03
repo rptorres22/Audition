@@ -9,7 +9,7 @@ var config 			= require('./config'),
 	express 		= require('express'),
 	bodyParser = require('body-parser'),
 	session = require('express-session')
-passport = require('passport'),
+	passport = require('passport'),
 	flash = require('connect-flash');
 	//methodOverride 	= require('method-override');
 
@@ -33,7 +33,7 @@ module.exports = function () {
 	app.use(session({
 		saveUninitialized: true,
 		resave: true,
-		secret: config.sessionSecret
+		secret: 'OurSecret' //config.sessionSecret
 	}));
 
 

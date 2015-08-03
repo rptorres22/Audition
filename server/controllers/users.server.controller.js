@@ -29,7 +29,7 @@ exports.createUser = function (req, res) {
                     message: getErrorMessage(err)
                 });
         } else {
-            res.json(test);
+            res.json(user);
         }
     });
 };
@@ -71,8 +71,7 @@ exports.getUserByUsername = function (req, res, next, un) {
         if (!user)
             return next(new Error('Failed to get User ' + un));
 
-        req.user = user;
-
+        req.foundUser = user;
         next();
     })
 };
@@ -84,16 +83,16 @@ exports.read = function (req, res) {
 
 //Page Render Methods
 exports.renderUserProfile = function (req, res) {
+
     if (req.user) {
         res.render('users/profile', {
-            title: req.user.firstName + '\'s Profile',
+            title: req.foundUser.firstName + '\'s Profile',
             messages: req.flash('error') || req.flash('info'),
-            user: req.user
+            user: req.foundUser
         });
     } else {
         return res.redirect('/');
     }
-
 };
 
 exports.renderLogin = function (req, res, next) {
