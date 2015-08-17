@@ -65,7 +65,7 @@ exports.getUserByID = function (req, res, next, id) {
 };
 
 exports.getUserByUsername = function (req, res, next, un) {
-    UserModel.findOne({'normalizedUsername': un.toLowerCase()}).select({'_id':0}).exec(function (err, user) {
+    UserModel.findOne({'normalizedUsername': un.toLowerCase()}).select({'_id': 1}).exec(function (err, user) {
         if (err)
             return next(err);
         if (!user)

@@ -16,8 +16,7 @@ var userSchema = new Schema({
         type: String,
         unique: true,
         trim: true,
-        lowercase: true,
-        select: false
+        lowercase: true
     },
     firstName: {
         type: String,
@@ -45,14 +44,14 @@ var userSchema = new Schema({
         ],
     },
     salt: {
-        type: String,
+        type: String
     },
     provider: {
         type: String,
         required: 'Provider is required',
     },
     providerId: {
-        type: String,
+        type: String
     },
     providerData: {},
     created: {
@@ -61,8 +60,7 @@ var userSchema = new Schema({
     },
     accessType: {
         type: String,
-        default: 'level1',
-        select: false
+        default: 'level1'
     }
 });
 

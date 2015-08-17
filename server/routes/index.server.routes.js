@@ -33,11 +33,16 @@ module.exports = function (app) {
     app.route('/users/:username')
         .get(userController.renderUserProfile);
 
-    app.param('username', userController.getUserByUsername);
+
 
 
     /* Team Routes */
     app.route('/api/team/create')
         .post(teamController.createTeam);
 
+    app.route('/api/team/addMember/:username')
+        .post(teamController.addTeamMembers);
+
+
+    app.param('username', userController.getUserByUsername);
 };
