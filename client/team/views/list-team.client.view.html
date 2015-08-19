@@ -1,0 +1,42 @@
+<!-- The list tests view -->
+<section data-ng-controller="TeamController" data-ng-init="find()">
+
+    <h1>Team</h1>
+
+    <div data-ng-repeat="x in teams">
+        <div><span>Team Name:</span>{{x.teamName}}</div>
+        <div><span>Team Leader:</span>{{x.owner.firstName}}</div>
+        <div><span>Created On:</span>{{x.createdDate}}</div>
+        <div>
+            <ol>
+                <li data-ng-repeat="y in x.teamMembers">
+                    <div>First Name: {{ y.firstName }}</div>
+                    <div>Last Name: {{ y.lastName }}</div>
+                    <div>Username: {{ y.normalizedUsername }}</div>
+                    <div>E-mail: {{ y.email }}</div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!--<ul>-->
+    <!-- The list of tests -->
+    <!--<li data-ng-repeat="team in tests">-->
+    <!--<p data-ng-bind="test.message"></p>-->
+    <!--<small>Created: </small><small data-ng-bind="test.created | date:'medium'"></small>-->
+    <!--<a href="/#!/test/{{test._id}}/edit">Edit</a>-->
+    <!--<a href="" data-ng-click="delete(test)">Delete</a>-->
+    <!--</li>	-->
+    <!--</ul>-->
+
+    <!--&lt;!&ndash; If there are no tests in the list, suggest the user's create a new test &ndash;&gt;-->
+    <!--<div data-ng-hide="!tests || tests.length">-->
+    <!--No tests yet, why don't you <a href="/#!/test/create"> create one</a>?-->
+    <!--</div>-->
+    <!-- -->
+    <!--&lt;!&ndash; Extra code - i added this to navigate easier&ndash;&gt;-->
+    <!--<div data-ng-show="tests.length">-->
+    <!--<a href="/#!/test/create">Create a new test</a>-->
+    <!--</div>-->
+
+</section>

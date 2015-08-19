@@ -42,16 +42,20 @@ var userSchema = new Schema({
                 return password && password.length > 6;
             }, 'Password should be longer'
         ],
+        select: false
     },
     salt: {
-        type: String
+        type: String,
+        select: false
     },
     provider: {
         type: String,
         required: 'Provider is required',
+        select: false
     },
     providerId: {
-        type: String
+        type: String,
+        select: false
     },
     providerData: {},
     created: {
@@ -61,6 +65,10 @@ var userSchema = new Schema({
     accessType: {
         type: String,
         default: 'level1'
+    },
+    __v: {
+        type: Number,
+        select: false
     }
 });
 

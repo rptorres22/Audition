@@ -37,12 +37,23 @@ module.exports = function (app) {
 
 
     /* Team Routes */
+
+    app.route('/api/team/')
+        .get(teamController.listAll);
+
+    app.route('/api/team/:teamName')
+        .get(teamController.read);
+
     app.route('/api/team/create')
-        .post(teamController.createTeam);
+        .post(teamController.create);
 
-    app.route('/api/team/addMember/:username')
-        .post(teamController.addTeamMembers);
+    app.route('/api/team/:teamName/Members/:username')
+        .post(teamController.addMember)
+        .delete(teamController.removeMember);
 
+    app.route('/api/team/:teamName')
+        .get(teamController.read);
 
     app.param('username', userController.getUserByUsername);
+    app.param('teamName', teamController.teamByName);
 };

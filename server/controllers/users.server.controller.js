@@ -23,7 +23,6 @@ exports.createUser = function (req, res) {
     var user = new UserModel(req.body);
     user.save(function (err) {
         if (err) {
-            // If an error occurs send the error message
             return res.status(400)
                 .send({
                     message: getErrorMessage(err)
@@ -38,13 +37,11 @@ exports.listAll = function (req, res) { //TODO make right
     UserModel.find().sort('-created')
         .exec(function (err, data) {
             if (err) {
-                // If an error occurs send the error message
                 return res.status(400)
                     .send({
                         message: getErrorMessage(err)
                     });
             } else {
-                // Send a JSON representation of the articles
                 res.json(data);
             }
         });
@@ -57,7 +54,6 @@ exports.getUserByID = function (req, res, next, id) {
             return next(err);
         if (!user)
             return next(new Error('Failed to get User ' + id));
-
         req.user = user;
 
         next();
@@ -65,13 +61,16 @@ exports.getUserByID = function (req, res, next, id) {
 };
 
 exports.getUserByUsername = function (req, res, next, un) {
-    UserModel.findOne({'normalizedUsername': un.toLowerCase()}).select({'_id': 1}).exec(function (err, user) {
+    UserModel.findOne({'normalizedUsername': un.toLowerCase()}).select({
+        '_id': 1,
+        'normalizedUsername': 1
+    }).exec(function (err, user) {
         if (err)
             return next(err);
         if (!user)
             return next(new Error('Failed to get User ' + un));
 
-        req.foundUser = user;
+        req.userSearch = user;
         next();
     })
 };
@@ -86,9 +85,9 @@ exports.renderUserProfile = function (req, res) {
 
     if (req.user) {
         res.render('users/profile', {
-            title: req.foundUser.firstName + '\'s Profile',
+            title: req.userSearch.firstName + '\'s Profile',
             messages: req.flash('error') || req.flash('info'),
-            user: req.foundUser
+            user: req.userSearch
         });
     } else {
         return res.redirect('/');

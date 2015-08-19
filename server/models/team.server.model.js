@@ -16,28 +16,12 @@ var teamSchema = new Schema({
     },
     teamMembers: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'User'
-    }],
-});
-
-teamSchema.pre('save', function (next) {
-    if(this.teamName){
-    }
-    next();
+    }]
 });
 
 teamSchema.statics.findByName = function (name, callback) {
     var _this = this;
-    _this.findOne({teamName: name}, function (err, team) {
-        if (!err) {
-            if (!team) {
-                //callback(possibleUsername);
-            } else {
-                return callback(team);
-            }
-        } else {
-            //callback(null);
-        }
-    });
-}
+    _this.findOne({teamName: new RegExp(name, 'i')}, callback);
+};
 
 mongoose.model('Team', teamSchema);

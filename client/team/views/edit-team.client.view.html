@@ -1,0 +1,28 @@
+<!-- The edit test view -->
+<section data-ng-controller="TestController" data-ng-init="findOne()">
+
+    <h1>Edit Test</h1>
+
+    <!-- The edited test form -->
+    <form data-ng-submit="update()" novalidate>
+
+        <div>
+            <label for="message">Message</label>
+
+            <div>
+                <input type="text" data-ng-model="test.message" id="message" placeholder="Message" required>
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" value="Update">
+        </div>
+
+        <!-- The error message element -->
+        <div data-ng-show="error">
+            <strong data-ng-bind="error"></strong>
+        </div>
+
+    </form>
+
+</section>
