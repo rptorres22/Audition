@@ -41,21 +41,17 @@ var userSchema = new Schema({
             function (password) {
                 return password && password.length > 6;
             }, 'Password should be longer'
-        ],
-        select: false
+        ]
     },
     salt: {
-        type: String,
-        select: false
+        type: String
     },
     provider: {
         type: String,
-        required: 'Provider is required',
-        select: false
+        required: 'Provider is required'
     },
     providerId: {
-        type: String,
-        select: false
+        type: String
     },
     providerData: {},
     created: {

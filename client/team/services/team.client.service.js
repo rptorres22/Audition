@@ -8,7 +8,8 @@ angular.module('team').factory('TeamService', ['$resource',
                 teamId: '@id', teamName: '@teamName'
             }, {
                 update: {method: 'PUT'},
-                query: {method: 'GET', params: {}, isArray: true}
+                'query': {method: 'GET', params: {}, isArray: true},
+                'save': {method: 'POST', url: '/api/team/create/'}
             }
         );
 

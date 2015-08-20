@@ -4,9 +4,9 @@
     <h1>Team</h1>
 
     <div data-ng-repeat="x in teams">
-        <div><span>Team Name:</span>{{x.teamName}}</div>
-        <div><span>Team Leader:</span>{{x.owner.firstName}}</div>
-        <div><span>Created On:</span>{{x.createdDate}}</div>
+        <div><span>Team Name: </span>{{x.teamName}}</div>
+        <div><span>Team Leader: </span>{{x.owner.firstName}}</div>
+        <div><span>Created On: </span>{{x.createdDate}}</div>
         <div>
             <ol>
                 <li data-ng-repeat="y in x.teamMembers">
@@ -14,6 +14,7 @@
                     <div>Last Name: {{ y.lastName }}</div>
                     <div>Username: {{ y.normalizedUsername }}</div>
                     <div>E-mail: {{ y.email }}</div>
+                    <br>
                 </li>
             </ol>
         </div>

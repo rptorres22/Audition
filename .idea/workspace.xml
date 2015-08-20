@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d18d438a-3a01-41e7-a8b5-82726c065c4f" name="Default" comment="Added list of members to team, maybe easier to keep track of team members in this fashion.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/team/views/create-team.client.view.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/team/views/edit-team.client.view.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/team/views/list-team.client.view.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/team/controllers/team.client.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/team/team.client.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/team/config/team.client.routes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/team/services/team.client.service.js" />
+    <list default="true" id="d18d438a-3a01-41e7-a8b5-82726c065c4f" name="Default" comment="0. Started building Angular Functionality for the Team module. &#10;1. Solidified the CRUD for Team&#10;2. Added Controller Methods for the Server side API&#10;3. Will be deprecating the team member model, team members are a part of team. &#10;&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/user/user.client.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/user/services/user.client.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/application.js" afterPath="$PROJECT_DIR$/client/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/team/views/create-team.client.view.html" afterPath="$PROJECT_DIR$/client/team/views/create-team.client.view.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/views/index.ejs" afterPath="$PROJECT_DIR$/server/views/index.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/index.server.controller.js" afterPath="$PROJECT_DIR$/server/controllers/index.server.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/index.server.routes.js" afterPath="$PROJECT_DIR$/server/routes/index.server.routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/team.server.controller.js" afterPath="$PROJECT_DIR$/server/controllers/team.server.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/team.server.model.js" afterPath="$PROJECT_DIR$/server/models/team.server.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/team/views/list-team.client.view.html" afterPath="$PROJECT_DIR$/client/team/views/list-team.client.view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/team/controllers/team.client.controller.js" afterPath="$PROJECT_DIR$/client/team/controllers/team.client.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/team/services/team.client.service.js" afterPath="$PROJECT_DIR$/client/team/services/team.client.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/users.server.controller.js" afterPath="$PROJECT_DIR$/server/controllers/users.server.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/users.server.model.js" afterPath="$PROJECT_DIR$/server/models/users.server.model.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -37,48 +35,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.server.routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/index.server.routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="team.client.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/team/controllers/team.client.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+              <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list-team.client.view.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/team/views/list-team.client.view.html">
+      <file leaf-file-name="create-team.client.view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/team/views/create-team.client.view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1515151">
-              <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+            <state vertical-scroll-proportion="-14.384615">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="null/audition/teams" pinned="false" current-in-tab="false">
-        <entry file="mongo://null/audition/teams">
-          <provider selected="true" editor-type-id="MongoData">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team.client.service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/team/services/team.client.service.js">
+      <file leaf-file-name="edit-team.client.view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/team/views/edit-team.client.view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.444445">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+            <state vertical-scroll-proportion="-17.653847">
+              <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -88,18 +69,70 @@
         <entry file="file://$PROJECT_DIR$/client/team/config/team.client.routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+              <caret line="9" column="68" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team.server.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/controllers/team.server.controller.js">
+      <file leaf-file-name="index.server.routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/routes/index.server.routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/views/index.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.client.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/user/services/user.client.service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.client.module.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/user/user.client.module.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.110749185">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/application.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="101" selection-start-line="3" selection-start-column="101" selection-end-line="3" selection-end-column="101" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.server.model.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/users.server.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#43#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/models/files.server.model.js" />
-        <option value="$PROJECT_DIR$/server/models/roles.server.model.js" />
         <option value="$PROJECT_DIR$/server/models/reviews.server.model.js" />
         <option value="$PROJECT_DIR$/server/models/viewstatus.server.model.js" />
         <option value="$PROJECT_DIR$/server/models/requesttype.server.model.js" />
@@ -142,11 +173,9 @@
         <option value="$PROJECT_DIR$/client/users/views/signup-users.client.view.html" />
         <option value="$PROJECT_DIR$/client/users/views/signin-users.client.view.html" />
         <option value="$PROJECT_DIR$/client/users/controllers/user.client.controller.js" />
-        <option value="$PROJECT_DIR$/client/users/services/users.client.service.js" />
         <option value="$PROJECT_DIR$/client/users/controllers/users.client.controller.js" />
         <option value="$PROJECT_DIR$/client/users/views/list-users.client.view.html" />
         <option value="$PROJECT_DIR$/client/test/test.client.module.js" />
-        <option value="$PROJECT_DIR$/client/users/users.client.module.js" />
         <option value="$PROJECT_DIR$/client/users/config/users.client.routes.js" />
         <option value="$PROJECT_DIR$/../USAIColorConverter/files/jqColor.js" />
         <option value="$PROJECT_DIR$/server/views/users.ejs" />
@@ -156,24 +185,28 @@
         <option value="$PROJECT_DIR$/server/controllers/reviews.server.controller.js" />
         <option value="$PROJECT_DIR$/server/views/users/signup.ejs" />
         <option value="$PROJECT_DIR$/server/views/users/login.ejs" />
-        <option value="$PROJECT_DIR$/server/controllers/index.server.controller.js" />
         <option value="$PROJECT_DIR$/server/config/strategies/local.js" />
         <option value="$PROJECT_DIR$/server/views/users/profile.ejs" />
         <option value="$PROJECT_DIR$/server/config/express.js" />
         <option value="$PROJECT_DIR$/server/models/teammembers.server.model.js" />
-        <option value="$PROJECT_DIR$/client/team/views/create-team.client.view.html" />
         <option value="$PROJECT_DIR$/client/team/team.client.module.js" />
-        <option value="$PROJECT_DIR$/client/application.js" />
-        <option value="$PROJECT_DIR$/server/views/index.ejs" />
-        <option value="$PROJECT_DIR$/client/team/config/team.client.routes.js" />
-        <option value="$PROJECT_DIR$/server/models/users.server.model.js" />
         <option value="$PROJECT_DIR$/server/models/team.server.model.js" />
-        <option value="$PROJECT_DIR$/server/controllers/users.server.controller.js" />
-        <option value="$PROJECT_DIR$/client/team/controllers/team.client.controller.js" />
-        <option value="$PROJECT_DIR$/client/team/services/team.client.service.js" />
-        <option value="$PROJECT_DIR$/server/routes/index.server.routes.js" />
         <option value="$PROJECT_DIR$/server/controllers/team.server.controller.js" />
         <option value="$PROJECT_DIR$/client/team/views/list-team.client.view.html" />
+        <option value="$PROJECT_DIR$/client/team/services/team.client.service.js" />
+        <option value="$PROJECT_DIR$/server/controllers/users.server.controller.js" />
+        <option value="$PROJECT_DIR$/server/routes/index.server.routes.js" />
+        <option value="$PROJECT_DIR$/server/controllers/index.server.controller.js" />
+        <option value="$PROJECT_DIR$/client/users/users.client.module.js" />
+        <option value="$PROJECT_DIR$/client/users/services/users.client.service.js" />
+        <option value="$PROJECT_DIR$/client/user/services/user.client.service.js" />
+        <option value="$PROJECT_DIR$/client/user/user.client.module.js" />
+        <option value="$PROJECT_DIR$/client/application.js" />
+        <option value="$PROJECT_DIR$/server/models/users.server.model.js" />
+        <option value="$PROJECT_DIR$/server/views/index.ejs" />
+        <option value="$PROJECT_DIR$/client/team/controllers/team.client.controller.js" />
+        <option value="$PROJECT_DIR$/client/team/views/create-team.client.view.html" />
+        <option value="$PROJECT_DIR$/client/team/config/team.client.routes.js" />
       </list>
     </option>
   </component>
@@ -336,38 +369,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Audition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Audition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Audition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Audition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -386,7 +387,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team" />
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Audition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Audition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,10 +428,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="team" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -504,11 +523,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\WorkArea\Audition\client" />
       <recent name="C:\WorkArea\Audition\client\team" />
       <recent name="C:\WorkArea\Audition\server\views\users" />
       <recent name="C:\WorkArea\Audition\server\views\Users" />
       <recent name="C:\WorkArea\Audition\server\views" />
-      <recent name="C:\WorkArea\Audition\client\users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\WorkArea\Audition\server\views\users" />
@@ -656,7 +675,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439846088340</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="0. Started building Angular Functionality for the Team module. &#10;1. Solidified the CRUD for Team&#10;2. Added Controller Methods for the Server side API&#10;3. Will be deprecating the team member model, team members are a part of team. &#10;&#10;">
+      <created>1440020505704</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1440020505704</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -700,7 +725,8 @@
     <MESSAGE value="Models Update" />
     <MESSAGE value="Added Connect-Flash to Signup" />
     <MESSAGE value="Added list of members to team, maybe easier to keep track of team members in this fashion." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added list of members to team, maybe easier to keep track of team members in this fashion." />
+    <MESSAGE value="0. Started building Angular Functionality for the Team module. &#10;1. Solidified the CRUD for Team&#10;2. Added Controller Methods for the Server side API&#10;3. Will be deprecating the team member model, team members are a part of team. &#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="0. Started building Angular Functionality for the Team module. &#10;1. Solidified the CRUD for Team&#10;2. Added Controller Methods for the Server side API&#10;3. Will be deprecating the team member model, team members are a part of team. &#10;&#10;" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -710,20 +736,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/models/request.server.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23129252">
@@ -857,14 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/index.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24918567">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/roles.server.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -977,61 +981,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/team/views/edit-team.client.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/team/views/create-team.client.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6105442">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20272572">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/team/team.client.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/views/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/team.server.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5537459">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/users.server.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80618894">
-          <caret line="71" column="5" selection-start-line="68" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1043,10 +997,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/team/team.client.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13843648">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/team/views/list-team.client.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/team.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.193811">
+          <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/index.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.318569">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/team/services/team.client.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30456027">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/users.server.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6368078">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.49837133">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1054,31 +1048,41 @@
     <entry file="file://$PROJECT_DIR$/server/routes/index.server.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/team.server.controller.js">
+    <entry file="file://$PROJECT_DIR$/server/models/users.server.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/team/controllers/team.client.controller.js">
+    <entry file="file://$PROJECT_DIR$/client/team/views/create-team.client.view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/team/services/team.client.service.js">
+    <entry file="file://$PROJECT_DIR$/client/team/views/edit-team.client.view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.444445">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        <state vertical-scroll-proportion="-17.653847">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1086,15 +1090,39 @@
     <entry file="file://$PROJECT_DIR$/client/team/config/team.client.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <caret line="9" column="68" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/team/views/list-team.client.view.html">
+    <entry file="file://$PROJECT_DIR$/client/team/controllers/team.client.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1515151">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="101" selection-start-line="3" selection-start-column="101" selection-end-line="3" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/user/services/user.client.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/user/user.client.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.110749185">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
           <folding />
         </state>
       </provider>

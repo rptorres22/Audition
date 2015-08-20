@@ -9,21 +9,19 @@
 <!-- The create test view -->
 <section data-ng-controller="TeamController">
 
-    <h1>New Test Message</h1>
+    <h1>Create a Team</h1>
 
     <!-- The new article form -->
     <form data-ng-submit="create()" novalidate>
         <div>
-            <label for="usermessage">Messsage</label>
-
+            <!--<label for="teamName">Enter Team Name:</label>-->
             <div>
-                <input type="text" data-ng-model="usermessage" id="usermessage" placeholder="Type a message" required>
+                <input type="text" data-ng-model="teamName" id="teamName" placeholder="Enter a Team Name" required>
             </div>
         </div>
 
-
         <div>
-            <input type="submit">
+            <input type="submit" value="Submit">
         </div>
 
         <!-- The error message element -->

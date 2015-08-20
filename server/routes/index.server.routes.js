@@ -45,7 +45,7 @@ module.exports = function (app) {
         .get(teamController.read);
 
     app.route('/api/team/create')
-        .post(teamController.create);
+        .post(userController.requiresLogin, teamController.create);
 
     app.route('/api/team/:teamName/Members/:username')
         .post(teamController.addMember)

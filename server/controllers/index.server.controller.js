@@ -7,7 +7,8 @@ exports.render = function (req, res) {
 
 	res.render('index', {
 		title: "Welcome to Audition",
-		userFirstName: req.user ? req.user.firstName : ''
+		userFirstName: req.user ? req.user.firstName : '',
+		user: JSON.stringify(req.user)
 	});
 
 };
